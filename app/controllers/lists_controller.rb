@@ -7,7 +7,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    @bookmarks = Bookmark.all
+    @bookmarks = Bookmark.where(list_id: params[:id])
     @movies = Movie.all
     @messageH1 = "#{@list.name}"
   end
