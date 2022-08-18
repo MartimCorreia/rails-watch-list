@@ -1,0 +1,9 @@
+<%= render "components/navbar"%>
+<%= render "components/banner"%>
+
+<%= simple_form_for @bookmark do |f| %>
+  <%= f.input :name %>
+  <%= f.association :lists, collection: List.active.order(:name), prompt: "Choose a List" %>
+  <%= f.association :movies, collection: Movie.active.order(:title), prompt: "Choose a Movie" %>
+  <%= f.button :submit %>
+<% end %>

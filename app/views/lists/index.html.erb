@@ -1,0 +1,13 @@
+<%= render "components/navbar"%>
+<%= render "components/banner"%>
+  <h2>My Lists</h2>
+<div class="container d-flex">
+  <%@lists.each do |list|%>
+  <div class="card-category m-3 col-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <%= link_to list.name, list_path(list.id) %>
+  </div>
+  <% end %>
+  <div class="create-list col-3 ms-5">
+    <%= button_to "Create movie List", new_list_path, :method => :get %>
+  </div>
+</div>
