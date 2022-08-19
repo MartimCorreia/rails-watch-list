@@ -1,8 +1,9 @@
 <%= render "components/navbar"%>
 <%= render "components/banner"%>
-
+<div class="container mt-4">
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment %>
   <%= f.association :movie %>
   <%= f.button :submit %>
 <% end %>
+</div>

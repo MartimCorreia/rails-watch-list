@@ -14,6 +14,7 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
+    @messageH1 = "Choose a List name!"
   end
 
   def create
